@@ -1,0 +1,10 @@
+name: Pulumi_Serverless_Indexer
+runtime:
+  name: python
+  options:
+    virtualenv: venv
+description: Serverless Application for processing uploads to a storage
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: aws-python
