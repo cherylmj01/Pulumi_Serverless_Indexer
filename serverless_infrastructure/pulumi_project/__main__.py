@@ -3,7 +3,7 @@ import pulumi_aws as aws
 from serverless_component import ServerlessInfrastructure
 from compute import define_lambda_role
 
-# Instantiate your serverless infrastructure component
+# Instantiate the serverless infrastructure component
 serverless_infra = ServerlessInfrastructure('my-serverless-infra')
 
 lambda_role = define_lambda_role(serverless_infra.bucket.arn, serverless_infra.index_db.arn)
