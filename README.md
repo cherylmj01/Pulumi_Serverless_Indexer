@@ -33,16 +33,21 @@ This guide gives you everything you need to start using this application, includ
 
 ### Setup and Deployment
 
-1. **Configure AWS CLI** : Ensure the [AWS CLI](https://aws.amazon.com/cli/) is installed and configured with your credentials.
+1. **Configure AWS CLI** : Ensure the [AWS CLI](https://aws.amazon.com/cli/) is installed and configured with your credentials:
+
    ```
    aws configure
    ```
+
 2. **Install Pulumi** : Follow the [Pulumi installation guide](https://www.pulumi.com/docs/install/)
 3. **Setup an AWS project with Pulumi**: Read and familiarize yourself with the [Pulumi guide for AWS here](https://www.pulumi.com/docs/install/).
 4. **Deploy your Pulumi Project**: Navigate to the **`/serverless_infrastructure/pulumi_project`** directory and run:
-   `   pulumi up`
-   This command creates or updates your AWS resources based on your Pulumi scripts. Follow the prompts to complete the deployment.
-5. **Deploy the Lambda function** : Ensure your AWS Lambda function code is ready in **`/lambda_function`**. Deploy it as part of the Pulumi script or manually through the AWS console.
+
+```
+   pulumi up
+```
+
+This command creates or updates your AWS resources based on your Pulumi scripts. Follow the prompts to complete the deployment. 5. **Deploy the Lambda function** : Ensure your AWS Lambda function code is ready in **`/lambda_function`**. Deploy it as part of the Pulumi script or manually through the AWS console.
 
 ### Architecture
 
@@ -50,7 +55,7 @@ This serverless application is designed for simplicity and scalability using the
 
 #### AWS Lamda Function Trigger :
 
-- The application kicks into action with file uploads to an AWS S3 bucket. Each upload generates an event that triggers an AWS Lambda function. This function is specifically designed to react to new uploads by executing a pre-defined set of operations without the need for a continuously running server.
+The application kicks into action with file uploads to an AWS S3 bucket. Each upload generates an event that triggers an AWS Lambda function. This function is specifically designed to react to new uploads by executing a pre-defined set of operations without the need for a continuously running server.
 
 #### Role of DynamoDB
 
@@ -75,7 +80,7 @@ This application automates the processing of files uploaded to an AWS S3 bucket,
   ```
   aws s3 cp your-file.txt s3://your-bucket-name/
   ```
-- Replace your-file.txt with the path to your file and your-bucket-name with the name of your AWS S3 bucket.
+- Replace `your-file.txt` with the path to your file and `your-bucket-name` with the name of your AWS S3 bucket.
 
 #### Viewing Logs or Outputs from the AWS Lambda Function
 
@@ -102,3 +107,9 @@ This application automates the processing of files uploaded to an AWS S3 bucket,
 - Replace **`my-serverless-infra-index-table-a24e71b`** with your table name and **"your-file-key"** with the actual key of the file you're interested in.
 
 By following these steps, you can effectively upload files to the designated AWS S3 bucket, monitor the processing through the AWS Lambda function logs, and view the resulting metadata records stored in DynamoDB.
+
+### References
+
+- [Pulumi Documentation](https://www.pulumi.com/docs/) - For guidance on defining cloud infrastructure with Pulumi.
+- [AWS Documentation](https://docs.aws.amazon.com/) - For insights into using AWS services and navigating the AWS console.
+- [Chat GPT](https://chat.openai.com/) - For general guidance, answering questions related to project development, and troubleshooting assistance.
